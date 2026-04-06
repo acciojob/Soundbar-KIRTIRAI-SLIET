@@ -1,10 +1,7 @@
 //your JS code here. If required.
-const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
-const buttons = document.querySelectorAll(".btn");
-
 let currentAudio = null;
 
-buttons.forEach(button => {
+document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", () => {
     const sound = button.innerText;
 
@@ -21,7 +18,7 @@ buttons.forEach(button => {
       currentAudio.currentTime = 0;
     }
 
-    const audio = new Audio(`sounds/${sound}.mp3`);
+    const audio = document.getElementById(sound);
     currentAudio = audio;
     audio.play();
   });
